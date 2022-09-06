@@ -1,29 +1,22 @@
-import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
-import Circle from "./Circle";
+import { createGlobalStyle } from "styled-components";
+import Router from "./Router";
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    color:red;
+  }
+  a{
+    text-decoration:none;
+    color:inherit;
+  }
+`;
 
 function App() {
-  const [value, setValue] = useState("");
-  const changeInput = (e: React.FormEvent<HTMLInputElement>) => {
-    setValue(e.currentTarget.value);
-  };
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    return "s";
-  };
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          value={value}
-          onChange={changeInput}
-          type="text"
-          placeholder="username"
-        />
-        <button>Log in</button>
-      </form>
-    </div>
+    <>
+      <GlobalStyle />
+      <Router />
+    </>
   );
 }
 
