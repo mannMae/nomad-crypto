@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/nomad-react-expert/static/js/main.7712012d.js",
+    "index.html": "/nomad-react-expert/index.html",
+    "main.7712012d.js.map": "/nomad-react-expert/static/js/main.7712012d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.7712012d.js"
+  ]
+}
