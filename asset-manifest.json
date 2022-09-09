@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/nomad-crypto/static/js/main.5a443524.js",
+    "index.html": "/nomad-crypto/index.html",
+    "main.5a443524.js.map": "/nomad-crypto/static/js/main.5a443524.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5a443524.js"
+  ]
+}
