@@ -30,6 +30,7 @@ const Header = styled.header`
 const Title = styled.h1`
   font-size: 48px;
   color: ${(props) => props.theme.accentColor};
+  margin:0;
 `;
 
 const Loader = styled.div`
@@ -48,6 +49,7 @@ const OverviewItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color:${props=>props.theme.textColor};
 
   span:first-child {
     font-size: 10px;
@@ -59,6 +61,7 @@ const OverviewItem = styled.div`
 
 const Description = styled.p`
   margon: 20px 0;
+  color:${props=>props.theme.textColor};
 `;
 
 const Tabs = styled.div`
@@ -195,6 +198,7 @@ function Coin() {
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
+        <Link to="/" style={{position:"absolute", top:20, right:20, border:"1px solid black", padding:"10px", borderRadius:"10px", backgroundColor:"white"}}>Home</Link>
       </Header>
       {loading ? (
         <Loader>Loading...</Loader>
@@ -235,7 +239,7 @@ function Coin() {
           </Tabs>
           <Switch>
             <Route path={`/:coinId/price`}>
-              <Price />
+              <Price coinId={coinId} />
             </Route>
             <Route path={`/:coinId/chart`}>
               <Chart coinId={coinId} />

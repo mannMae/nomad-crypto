@@ -17,3 +17,6 @@ export function fetchCoinHistory(coinId: string) {
     `https://ohlcv-api.nomadcoders.workers.dev?coinId=${coinId}`
   ).then((res) => res.json());
 }
+
+export function fetchCoinPrice(coinId: string) {
+}
