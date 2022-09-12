@@ -3,6 +3,8 @@ import Router from "./Router";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { useState } from "react";
 import { darkTheme, theme } from "./theme";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "./atom";
 
 interface IGlobalStyle{
   isDark:boolean;
@@ -19,26 +21,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Button = styled.button`
-  width:150px;
-  height:50px;
-  border-radius:10px;
-  border:none;
-  background-color:${props=>props.theme.accentColor};
-  color:white;
-  font-weight:700;
-  font-size:15px;
-  cursor:pointer;
-`;
-
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const isDark = useRecoilValue(isDarkAtom);
   return (
     <>
     <ThemeProvider theme={isDark?darkTheme:theme}>
-      <Button onClick={()=>setIsDark(!isDark)}>DarkModeToggle</Button>
       <GlobalStyle />
-      <Router />
+      <Router/>
       <ReactQueryDevtools initialIsOpen={true} />
     </ThemeProvider>
     </>
